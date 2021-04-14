@@ -1,5 +1,6 @@
-package com.br.Zlash.DTOs.saldo;
+package com.br.Zlash.DTOs.conta;
 
+import com.br.Zlash.DTOs.saldo.SaldoDTO;
 import com.br.Zlash.enuns.StatusConta;
 import com.br.Zlash.models.Conta;
 import com.br.Zlash.models.Saldo;
