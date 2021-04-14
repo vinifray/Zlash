@@ -23,4 +23,11 @@ public class SaldoService {
 
         throw new ObjetoNaoEncontroException();
     }
+
+    public Saldo debitarSaldo(Saldo saldo, Double valor){
+        Double resultado = saldo.getValor() - valor;
+        saldo.setValor(resultado);
+        saldoRepository.save(saldo);
+        return saldo;
+    }
 }
