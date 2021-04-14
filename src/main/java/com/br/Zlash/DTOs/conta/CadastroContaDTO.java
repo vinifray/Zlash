@@ -6,18 +6,19 @@ import com.br.Zlash.models.Conta;
 import com.br.Zlash.models.Saldo;
 
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 public class CadastroContaDTO {
 
-    @NotBlank()
+    @DecimalMin("0.1")
     private double valor;
     @NotBlank()
     private String descricao;
-    @NotBlank
     private StatusConta status;
 
-    @ManyToOne
     private SaldoDTO saldo;
 
     public double getValor() {
