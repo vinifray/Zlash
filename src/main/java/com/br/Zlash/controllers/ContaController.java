@@ -17,6 +17,7 @@ public class ContaController {
 
     @PostMapping("/")
     public Conta cadastrarConta(@RequestBody @Valid CadastroContaDTO contaDTO){
+        System.out.println("Passou aqui");
         Conta conta = contaDTO.converterDTOparaModel();
         return contaService.cadastrarConta(conta);
     }
