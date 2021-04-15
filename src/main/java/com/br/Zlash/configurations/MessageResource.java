@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Component
-public class MensageResource {
+public class MessageResource {
 
     @Bean
     public MessageSource messageSource() {
