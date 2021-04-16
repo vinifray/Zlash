@@ -30,4 +30,8 @@ public class SaldoService {
         saldoRepository.save(saldo);
         return saldo;
     }
+
+    public Saldo cadastrarSaldo(Saldo saldo){
+        return saldoRepository.save(saldo);
+    }
 }

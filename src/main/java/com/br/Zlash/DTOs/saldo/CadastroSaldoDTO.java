@@ -1,16 +1,12 @@
 package com.br.Zlash.DTOs.saldo;
 
+import com.br.Zlash.models.Saldo;
 import org.hibernate.validator.constraints.br.CPF;
-import javax.validation.constraints.Min;
 
 public class CadastroSaldoDTO {
     @CPF(message = "{validacao.cpf}")
     private String cpf;
-    @Min(value = 100, message = "{validacao.saldo_minimo}")
-    private double valor;
-
-    public CadastroSaldoDTO() {
-    }
+    private double saldoInicial;
 
     public String getCpf() {
         return cpf;
@@ -20,11 +16,19 @@ public class CadastroSaldoDTO {
         this.cpf = cpf;
     }
 
-    public double getValor() {
-        return valor;
+    public double getSaldoInicial() {
+        return saldoInicial;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setSaldoInicial(double saldoInicial) {
+        this.saldoInicial = saldoInicial;
+    }
+
+    public Saldo converterDTOParaModel(){
+        Saldo saldo = new Saldo();
+        saldo.setValor(this.saldoInicial);
+        saldo.setCpf(this.cpf);
+
+        return saldo;
     }
 }
